@@ -19,7 +19,7 @@ const NavBar = ({ notifications, email }) => {
         <div className='bg-gray-900'>
             <div className="navbar bg-gray-900 container mx-auto">
                 <div className="flex-1">
-                    <a className="btn btn-ghost normal-case text-xl text-white">To-DO-List</a>
+                    <a className="btn btn-ghost normal-case text-xl text-white">ToDo-List</a>
                 </div>
                 <div className="flex-none">
 
@@ -38,7 +38,7 @@ const NavBar = ({ notifications, email }) => {
                             </div>
                             :
                             <>
-                                <Link to='/login' className='btn text-white bg-gray-900 '>Login</Link>
+
                             </>
                     }
 
