@@ -8,7 +8,7 @@ const Task = ({ task, setNotification }) => {
     const temp = item[0];
 
     const handleDelete = (event) => {
-        console.log(event.target.parentNode.parentNode.parentNode.parentNode.id);
+
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -24,7 +24,7 @@ const Task = ({ task, setNotification }) => {
                     'Your file has been deleted.',
                     'success'
                 )
-
+                console.log(event.target.parentNode.parentNode.parentNode.parentNode.classList.add('hidden'));
                 axios.delete(`https://to-do-list-113.herokuapp.com/taskList/${event.target.parentNode.parentNode.parentNode.parentNode.id}`)
             }
         })
@@ -50,19 +50,6 @@ const Task = ({ task, setNotification }) => {
                 delete temp._id;
                 axios.put(`https://to-do-list-113.herokuapp.com/taskList/${event.target.parentNode.parentNode.parentNode.parentNode.id}`, temp);
 
-                axios.post('https://to-do-list-113.herokuapp.com/notifications', task)
-                    .then(result => {
-
-                        Swal.fire({
-                            title: 'Success!',
-                            text: 'New Product Added',
-                            icon: 'success',
-                            confirmButtonText: 'Ok!'
-                        })
-
-                    }
-
-                    )
             }
 
         })

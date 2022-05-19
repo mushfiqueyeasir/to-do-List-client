@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import RequireAuth from "./component/Auth/RequireAuth";
 import UserAuth from "./component/Auth/UserAuth";
+import Error from "./component/Error/Error";
 import Login from "./component/Login/Login";
 import NavBar from "./component/NavBar/NavBar";
 import Register from "./component/Register/Register";
@@ -38,6 +39,11 @@ function App() {
             <Register></Register>
           </UserAuth>
         }></Route>
+
+        <Route path='*' element={<Error></Error>}></Route>
+
+
+
       </Routes>
 
 
